@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Notificação de cobrança via PIX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .header {
+            text-align: center;
+            color: #333;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            color: #555;
+        }
+        .important {
+            font-weight: bold;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>NOTIFICAÇÂO</h1>
+    </div>
+    <div class="content">
+        <p>Aviso: Mensalidade plano basico <span class="important" th:text="${nomeTarefa}">Nome da Tarefa</span> Data do envio <span class="important" th:text="${dataEvento}">Horário</span>.</p>
+        <p>Confira a descrição:</p>
+        <p th:text="${descricao}">Descrição</p>
+        <p>Valor: <span th:text="${valor}"></span></p>
+        <p>Data de Vencimento: <span th:text="${dataVencimento}"></span></p>
+        <p>Para realizar o pagamento, clique no botão abaixo para gerar seu QR Code ou acessar o link do Pix: <a th:href="${linkPix}">Clique aqui para pagar</a></p>
+    </div>
+    <div class="footer">
+        <p>Em caso de dúvidas, entre em contato conosco pelo e-mail <strong>suporte@targetcar.com</strong></p>
+        <p>&copy; 2025 Target Car Rastreamento. Todos os direitos reservados.</p>
+
+    </div>
+</div>
+</body>
+</html>
