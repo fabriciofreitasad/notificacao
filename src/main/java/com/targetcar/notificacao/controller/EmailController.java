@@ -2,6 +2,7 @@ package com.targetcar.notificacao.controller;
 
 import com.targetcar.notificacao.business.EmailService;
 import com.targetcar.notificacao.business.dto.TarefasDTO;
+import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,8 @@ public class EmailController {
 
     @PostMapping
     public ResponseEntity<Void> enviarEmail(@RequestBody TarefasDTO dto){
-       emailService.enviaEmail(dto);
+        emailService.enviaEmail(dto);
         return ResponseEntity.ok().build();
     }
+
 }
