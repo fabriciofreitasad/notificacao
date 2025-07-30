@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Notificação de cobrança via PIX</title>
+    <title>Notificação de Tarefa</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,20 +39,15 @@
 <body>
 <div class="container">
     <div class="header">
-        <h1>NOTIFICAÇÂO</h1>
+        <h1>Notificação de Tarefa</h1>
     </div>
     <div class="content">
-        <p>Aviso: Mensalidade plano basico <span class="important" th:text="${nomeTarefa}">Nome da Tarefa</span> Data do envio <span class="important" th:text="${dataEvento}">Horário</span>.</p>
-        <p>Confira a descrição:</p>
-        <p th:text="${descricao}">Descrição</p>
-        <p>Valor: <span th:text="${valor}"></span></p>
-        <p>Data de Vencimento: <span th:text="${dataVencimento}"></span></p>
-        <p>Para realizar o pagamento, clique no botão abaixo para gerar seu QR Code ou acessar o link do Pix: <a th:href="${linkPix}">Clique aqui para pagar</a></p>
+        <p>Aviso: Sua tarefa <span class="important" th:text="${nomeTarefa}">Nome da Tarefa</span> está agendada para hoje às <span class="important" th:text="${dataEvento}">Horário</span>.</p>
+        <p>Confira sua descrição:</p>
+        <p th:text="${descricao}">Descrição da Tarefa</p>
     </div>
     <div class="footer">
-        <p>Em caso de dúvidas, entre em contato conosco pelo e-mail <strong>suporte@targetcar.com</strong></p>
-        <p>&copy; 2025 Target Car Rastreamento. Todos os direitos reservados.</p>
-
+        <p>Obrigado por usar nosso sistema de tarefas.</p>
     </div>
 </div>
 </body>
