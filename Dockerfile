@@ -1,7 +1,11 @@
+FROM gradle:7.5-jdk17 as build
+WORKDIR /app
+copy . .
+run gradle build --no--daemon
 
 FROM openjdk:17-jdk-alpine
 WORKDIR /app
-COPY build/libs/notificacao-0.0.1-SNAPSHOT.jar /app/notificacao.jar
+COPY --from=build /app/build/libs/*T.jar  /app/notificacao.jar
 
 EXPOSE 8082
 
